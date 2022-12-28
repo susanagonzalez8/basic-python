@@ -1,3 +1,3 @@
 Keanu Reeves;1964;masculino;Speed;The Matrix;Constantine
 cameron diaz;1982;femenino;The Matrix;Constantine
-brad pitt;2012;masculino;Speed;The Matrix;Constantine
+brad Pitt;2012;masculino;Speed;The Matrix;Constantine
