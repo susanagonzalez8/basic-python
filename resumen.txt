@@ -1,6 +1,6 @@
 TIPOS BASICO DE DATOS
 
-- Constantes (literales): mantienen siempre su valor, tipos: 
+- Constantes (literales): mantienen siempre su valor , tipos: 
     Enteros (int): 12
     Decimales (float): 5.4
     Cadenas de texto (str): "hola" 
