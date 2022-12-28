@@ -1,0 +1,191 @@
+TIPOS BASICO DE DATOS
+
+- Constantes (literales): mantienen siempre su valor, tipos: 
+    Enteros (int): 12
+    Decimales (float): 5.4
+    Cadenas de texto (str): "hola" 
+    Booleanos: True / False
+
+- Variables: hacen referencia a un valor
+
+- Operadores: manipulan variables y Constantes
+    Sobre numero: + - * / % **
+    Sobre cadenas: concatenar (+), duplicar (*)
+    Logicos: and, or, not
+    De comparacion: < > <= >= == !=
+
+
+ENTRADA Y SALIDA DE DATOS
+
+Entrada: funcion input, devuelve una cadena. Si queremos otro tipo de dato:
+    x = int(input("Dame un dato")) --> numero Entero
+    x = float(input("Dame un dato")) --> numero Decimal
+    x = str(3.34) --> convierte un numero en una cadena
+
+Salida: funcion print, entre "", o variables separadas por coma 
+    ej: media = 4.5
+        print("El valor de la media es: ", media)
+    Por pantalla: El valor de la media es: 4.5
+
+
+LISTAS 
+
+dias = ["lunes", "martes", "miercoles", "jueves", "viernes"]
+El primer elemento es 0
+    - Acceder a un elemento: x = dias[3]
+    - Modificar un elemento: dias[2] = enero
+    - Borrar un elemento: del dias[4]
+
+numeros = [1,2,5,87,56] // vocales = ["a", "e", "i", "o", "u"]
+Operaciones sobre listas 
+    - Troceado: para acceder a rangos. Devuelve desde el primero hasta el ultimo-1
+        trozo = numeros[2:5]
+        print(trozo) --> [4,5,87]
+    - Suma: + concatena dos listas 
+        suma = numeros + vocales
+        print(suma) --> [1,2,5,87,56, "a", "e", "i", "o", "u"]
+    - Multiplicacion: * repide la lista n veces
+        multiplica = numeros*2
+    - Operador in: comprueba si un valor forma parte de la lista. Devuelve True o False
+        existe = 2 in numeros 
+    - len: devuelve el numero de elementos de una lista 
+        longitud = len(numeros)
+    - max, min: devuelve el maximo, minimo
+        maximo = max(numeros)
+
+Metodos sobre listas
+lista.metodo() 
+la lista original no se mantiene  
+    - append: añade un objeto al final de la lista
+    - count: cuenta las ocurrencias de un elemento
+    - extend: añade varios valores al final de la lista
+    - index: muestra el indice de la primera aparicion de un elemento
+    - insert: añade un elemento en una posicion determinada (posicion,elemento)
+    - pop: elimina un elemento, si no se indica (), elimina el ultimo
+    - remove: elimina la primera aparicion de un valor
+    - sort: ordena los elementos 
+    - reverse: da la vuelta a los elementos 
+
+
+CADENAS 
+
+    - \n: salto de linea
+    - \t: tabulador
+    - raw strings: para que los caracteres aparezcan en la cadena y no como especiales
+        x = r"c:\nopath"
+    - la mayoria de las acciones que se pueden realizar sobre listas se pueden realizar sobre cadenas
+
+Metodos sobre cadenas 
+cadena.metodo()
+    - find: busca una subcadena en una cadena, devuelve el indice de la primera letra de la subcadena
+    - join: une elementos de una lista 
+        lista = ["1", "2", "3"]
+        conector = "-"
+        c = conector.join(lista) --> 1-2-3
+    - split: trocea una cadena en una lista, usando como caracter de separacion un parametro dado
+        frase = "Hola que tal"
+        palabras = frase.split(" ") --> ["Hola", "que", "tal"]
+    - strip: elimina los caracteres blancos antes y despues de la cadena 
+    - replace: devuelve una cadena reemplazada ("a reemplazar", "reemplazado")
+    - upper: devuelve una copia de la cadena en mayusculas
+    - lower: devuelve una copia de la cadena en minusculas
+
+
+BLOQUES 
+
+1.SENTENCIAS CONDICIONALES (if-elif-else)
+    n = int(input("Introduzca un numero"))
+    if n > 0:
+        print("El numero es positivo")
+    elif n < 0: 
+        print("El numero es negativo")
+    else:
+        print("El numero es cero")
+
+2.BUCLES (while, for)
+while
+    n = int(input("Introduzca un numero"))
+    i = 1
+    total = 0
+    while i <= n:
+        num = int(input("Introduzca un numero"))
+        total = total + num
+        i = i + 1
+    print("La suma total es: ", total)
+
+for --> for nombre_variable in secuencia_valores: 
+friends = ["Juan", "Ana", "Maria", "Paco"]
+for friend in friends:
+    print("Feliz Navidad: " friend)
+print("Done")
+
+break --> sale del bucle 
+continue --> finaliza la iteracion actual de un bucle 
+
+
+DICCIONARIOS
+
+Son listas a las que se accede por una clava en vez de por un numero de orden.
+Son pares clave:valor. La clave es unica
+Diccionarios vacios --> nombres = {}
+                        nombres = dict()
+ejemplo --> telefonos = {"daniel":20, "Pepe": 52, "Juan": 87}
+
+- Acceso a un elemento --> dato = telefonos["daniel"]
+- Creacion/modificacion --> telefonos["daniel"] = 41
+
+Operaciones sobre diccionarios 
+    - len(nombre): devuelve el numero de elementos del diccionario nombre 
+    - del telefono["daniel"]: elimina el elemento con clave daniel 
+    - k in d: comprueba si existe un elemento en el diccionario d con la clave k. Devuelve true o False
+
+Bucles en diccionarios 
+
+Metodos en diccionarios 
+diccionario.metodo()
+    -clear: elimina todos los elementos de un diccionario 
+    - items: devuelve una relacion de elementos (clave, valor), utilizable dentro de un for 
+    - keys: devuelve una relacion de claves, utilizable dentro de un for 
+    - pop("clave"): devuelve el valor de clave y borra el elemento 
+    - update(otro_dicc): actualiza el diccionario con los elementos del otro
+    - values: devuelve una relacion con los valores del diccionario 
+
+    
+FICHEROS 
+
+open(nombre_fichero)
+Por defecto se abren con el modo lectura "r". 
+Otros modos son: 
+    - escritura "w" (realmente es sobreescritura)
+    - añadir "a"
+    - binario "b"
+    - lectura/escritura "r+"
+
+Metodos sobre ficheros 
+f.metodo()
+    - f.write(): escribe () en el fichero 
+    - f.read(): 
+    - f.seek(desplazamiento): mueve la posicion del puntero de fichero 
+    - f.tell(): da la posicion actual 
+    - f.readline(): devuelve la linea entera 
+    - f.readline(n): devuelve n caracteres de la linea
+    - f.readlines: devuelve todas las lineas de un  fichero como una lista 
+    - f.close(): cierra el fichero 
+
+Iteradores de ficheros: analizan linea a linea sin tener que leerlo entero 
+    f = open("nombre_fichero")
+    for line in f:
+        procesa(line)
+    f.close()
+
+
+FUNCIONES   
+
+Las funciones encapsulan un fragmento de codigo dandole un nombre. 
+Hay funciones predefinidas (int, float, str) o podemos definirlas
+
+
+MODULOS 
+
+Permiten encapsular en un fichero fragmentos de codigo que podra ser importado por otros modulos 
+
